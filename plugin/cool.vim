@@ -94,17 +94,17 @@ endif
 
 function! s:PlayItCool(old, new)
     if a:old == 0 && a:new == 1
-        " nohls --> hls
-        "   set up coolness
-        noremap <silent> <Plug>(StopHL) :<C-U>nohlsearch<cr>
-        if !exists('*execute')
-            noremap! <expr> <Plug>(StopHL) <SID>AuNohlsearch()
-        else
-            noremap! <expr> <Plug>(StopHL) execute('nohlsearch')[-1]
-        endif
+        " " nohls --> hls
+        " "   set up coolness
+        " noremap <silent> <Plug>(StopHL) :<C-U>nohlsearch<cr>
+        " if !exists('*execute')
+        "     noremap! <expr> <Plug>(StopHL) <SID>AuNohlsearch()
+        " else
+        "     noremap! <expr> <Plug>(StopHL) execute('nohlsearch')[-1]
+        " endif
 
-        autocmd Cool CursorMoved * call <SID>StartHL()
-        autocmd Cool InsertEnter * call <SID>StopHL()
+        " autocmd Cool CursorMoved * call <SID>StartHL()
+        " autocmd Cool InsertEnter * call <SID>StopHL()
     elseif a:old == 1 && a:new == 0
         " hls --> nohls
         "   tear down coolness
